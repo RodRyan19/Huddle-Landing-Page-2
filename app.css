@@ -1,0 +1,195 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  background: url("images/bg-mobile.svg"), hsl(257, 40%, 49%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+}
+header,
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 31.25rem;
+  margin-top: 2rem;
+}
+.logo {
+  width: 10.625rem;
+}
+.image {
+  width: 100%;
+  margin: 3rem 0;
+}
+.info {
+  color: white;
+  text-align: center;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  padding: 1.5rem 0;
+}
+.btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  display: inline-block;
+  text-decoration: none;
+  color: hsl(257, 40%, 49%);
+  padding: 0.9rem 6rem;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 10px 10px hsl(257, 40%, 39%);
+  margin: 1rem auto;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  margin: 5rem 0 1rem 0;
+}
+.icon-container {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 1rem;
+  fill: white;
+}
+.btn:hover,
+.btn:focus {
+  background-color: hsl(300, 69%, 71%);
+  color: white;
+}
+.icon-container:hover,
+.icon-container:focus {
+  fill: hsl(300, 69%, 71%);
+}
+
+@media screen and (min-width: 1070px) {
+  body {
+    background: url("images/bg-desktop.svg"), hsl(257, 40%, 49%), no-repeat;
+    background-size: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+  header,
+  main {
+    flex-direction: row;
+    max-width: 110rem;
+  }
+  .image {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .img {
+    width: 62.5rem;
+  }
+  .info {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 4rem;
+    align-self: center;
+    text-align: left;
+    align-items: flex-start;
+  }
+  h1 {
+    font-size: 2.7rem;
+    margin: 0;
+  }
+  .text {
+    line-height: 1.7;
+    font-size: 1.3rem;
+  }
+  .btn {
+    margin: 0;
+  }
+  .icons {
+    position: fixed;
+    align-self: end;
+    bottom: 0;
+    margin: 0;
+    padding: 0 0 2.5rem 0;
+  }
+  .icon-container {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
